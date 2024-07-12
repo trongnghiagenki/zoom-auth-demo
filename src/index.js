@@ -11,6 +11,10 @@ const port = process.env.PORT || 4000
 app.use(express.json(), cors())
 app.options('*', cors())
 
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 const propValidations = {
   role: inNumberArray([0, 1]),
   expirationSeconds: isBetween(1800, 172800)
